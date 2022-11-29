@@ -2,6 +2,7 @@ package navigation
 
 import "github.com/stretchr/testify/mock"
 
+// go:generate mockery --dir navigation --name Navigation --output navigation/mocks --outpkg mocks --with-expecter
 type MockedNavigation struct {
 	mock.Mock
 }

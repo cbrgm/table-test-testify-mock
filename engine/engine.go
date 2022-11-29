@@ -6,6 +6,7 @@ import (
 	"time"
 )
 
+// go:generate mockery --dir engine --name Engine --output engine/mocks --outpkg mocks --with-expecter
 type Engine interface {
 	ChargeLevel() int
 }
