@@ -85,7 +85,11 @@ func TestVehicleDiagnostics(t *testing.T) {
 		},
 	}
 	for _, tC := range testCases {
+
+		// see: https://gist.github.com/posener/92a55c4cd441fc5e5e85f27bca008721
+		tC := tC
 		t.Run(tC.desc, func(t *testing.T) {
+			t.Parallel()
 			mocks := &mockedFields{
 				&navigation.MockedNavigation{},
 				&engine.MockedEngine{},
@@ -180,7 +184,10 @@ func TestVehicleDiagnosticsGenerated(t *testing.T) {
 		},
 	}
 	for _, tC := range testCases {
+		// see: https://gist.github.com/posener/92a55c4cd441fc5e5e85f27bca008721
+		tC := tC
 		t.Run(tC.desc, func(t *testing.T) {
+			t.Parallel()
 			mocks := &mockedFields{
 				&genNavigationMocks.Navigation{},
 				&genEngineMocks.Engine{},
